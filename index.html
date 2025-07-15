@@ -1,116 +1,98 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Sharks TKD</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet" />
-<style>
-  /* Reset */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
-  /* Background + layout */
-  html, body {
-    height: 100%;
-    width: 100%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background:
-      linear-gradient(rgba(15, 32, 39, 0.9), rgba(44, 83, 100, 0.9)),
-      url("your-image.jpg") no-repeat center center fixed;
-    background-size: cover;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    gap: 40px;
-    overflow: hidden;
-    animation: fadeIn 1.5s ease-in;
-    padding: 20px;
-  }
-
-  /* Fade-in */
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: scale(1.05);
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sharks TKD</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    to {
-      opacity: 1;
-      transform: scale(1);
+
+    body {
+      height: 100vh;
+      width: 100%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url(img/tkd1.jpeg) center center / cover no-repeat fixed;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px;
+      background-color: #e6f0fa;
     }
-  }
 
-  /* Button container */
-  .container {
-    text-align: center;
-  }
-
-  /* Buttons */
-  .container a {
-    text-decoration: none;
-    font-size: 2.8rem;
-    padding: 25px 60px;
-    border-radius: 15px;
-    background: linear-gradient(135deg, #00c9ff, #92fe9d);
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    box-shadow: 0 0 20px rgba(0, 201, 255, 0.4);
-    border: 2px solid #ffffff33;
-    transition: all 0.4s ease-in-out;
-    position: relative;
-    overflow: hidden;
-    animation: pulseGlow 2.5s infinite ease-in-out;
-    display: inline-block;
-    cursor: pointer;
-  }
-
-  .container a::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: skewX(-25deg);
-    transition: left 0.6s ease;
-  }
-
-  .container a:hover::before {
-    left: 200%;
-  }
-
-  .container a:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 40px rgba(0, 201, 255, 0.6);
-    background: linear-gradient(135deg, #92fe9d, #00c9ff);
-  }
-
-  @keyframes pulseGlow {
-    0% {
-      box-shadow: 0 0 15px rgba(0, 201, 255, 0.3);
+    .wrapper {
+      background-color: rgba(255, 255, 255, 0.85);
+      padding: 60px;
+      border-radius: 15px;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      position: relative;
+      overflow: visible;
     }
-    50% {
-      box-shadow: 0 0 30px rgba(0, 201, 255, 0.7);
+
+    h1 {
+      color: #004080;
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
     }
-    100% {
-      box-shadow: 0 0 15px rgba(0, 201, 255, 0.3);
+
+    /* Style et animation pour le slogan */
+    .go-sharks {
+      color: #ff4500;
+      font-size: 1.8rem;
+      font-weight: bold;
+      margin-top: 20px;
+      animation: pulseZoom 2.5s infinite ease-in-out;
+      user-select: none;
+      letter-spacing: 1.5px;
     }
-  }
-</style>
+
+    @keyframes pulseZoom {
+      0%, 100% {
+        opacity: 0.6;
+        transform: scale(1);
+        text-shadow: 0 0 8px #ff4500;
+      }
+      50% {
+        opacity: 1;
+        transform: scale(1.1);
+        text-shadow: 0 0 20px #ff4500;
+      }
+    }
+
+    .container a {
+      display: inline-block;
+      text-decoration: none;
+      font-size: 1.4rem;
+      color: #004080;
+      border: 2px solid #004080;
+      padding: 14px 40px;
+      border-radius: 30px;
+      transition: 0.3s;
+      background-color: #e6f0fa;
+      margin-top: 30px;
+    }
+
+    .container a:hover {
+      background-color: #004080;
+      color: #ffffff;
+    }
+  </style>
 </head>
-<body>
-  <div class="container">
-    <a href="menu.html">Welcome to Sharks TKD</a>
-  </div>
 
-  <div class="container">
-    <a href="#">Click Me</a>
+<body>
+  <div class="wrapper">
+    <h1>Sharks TKD</h1>
+    <div class="go-sharks">Go Sharks !</div>
+    <div class="container">
+      <a href="menu.html">Visiter le site</a>
+    </div>
   </div>
 </body>
 </html>

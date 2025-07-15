@@ -1,164 +1,109 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sharks TKD - Menu</title>
   <style>
-/* Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-/* Fond animé dégradé */
-html, body {
-  height: 100%;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: linear-gradient(270deg, #ff416c, #ff4b2b, #1f4037, #99f2c8);
-  background-size: 800% 800%;
-  animation: gradientShift 15s ease infinite;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow-x: hidden;
-  color: #fff;
-  text-align: center;
-  padding: 40px 20px;
-}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: 
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url(img/tkd2.jpeg) center center / cover no-repeat fixed;
+      color: #ddd;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
 
-@keyframes gradientShift {
-  0% {background-position:0% 50%;}
-  50% {background-position:100% 50%;}
-  100% {background-position:0% 50%;}
-}
+    header {
+      margin-bottom: 50px;
+      text-align: center;
+    }
 
-/* Conteneur menu */
-.menu-container {
-  background: rgba(0,0,0,0.5);
-  padding: 40px 60px;
-  border-radius: 25px;
-  box-shadow: 0 0 40px rgba(255, 75, 43, 0.6);
-  width: 400px;
-  max-width: 90vw;
-  backdrop-filter: blur(8px);
-}
+    header h1 {
+      font-size: 2.8rem;
+      color: #00c6ff;
+      border-bottom: 2px solid #00c6ff;
+      padding-bottom: 10px;
+      display: inline-block;
+      letter-spacing: 1px;
+    }
 
-/* Titre avec effet glitch */
-.menu-container h1 {
-  font-size: 3.2rem;
-  font-weight: 900;
-  letter-spacing: 0.15em;
-  position: relative;
-  margin-bottom: 50px;
-  color: #ff4b2b;
-  animation: glitch 2s infinite;
-}
+    nav {
+      width: 100%;
+      max-width: 500px;
+    }
 
-@keyframes glitch {
-  0%, 100% {
-    text-shadow: 2px 0 #ff416c, -2px 0 #ff4b2b;
-  }
-  50% {
-    text-shadow: 2px 0 #ff4b2b, -2px 0 #ff416c;
-  }
-}
+    ul.menu {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-/* Liste verticale épurée avec formes et animations */
-.menu-links {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 0;
-  max-width: 350px;
-  margin: 0 auto;
-}
+    ul.menu li {
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      transition: 0.3s;
+    }
 
-.menu-links li {
-  background: #1f4037; /* vert sombre */
-  border-radius: 15px;
-  padding: 18px 25px;
-  box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
+    ul.menu li a {
+      display: block;
+      padding: 15px 25px;
+      text-decoration: none;
+      color: #ddd;
+      font-weight: 500;
+      transition: 0.3s;
+    }
 
-/* Barre colorée à gauche */
-.menu-links li::before {
-  content: '';
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 8px;
-  height: 100%;
-  background: linear-gradient(180deg, #ff4b2b, #99f2c8);
-  border-radius: 15px 0 0 15px;
-  transition: width 0.3s ease;
-}
+    ul.menu li:hover {
+      background-color: rgba(0, 198, 255, 0.15);
+    }
 
-/* Hover state */
-.menu-links li:hover {
-  transform: translateX(10px);
-  box-shadow: 0 12px 25px rgba(153, 242, 200, 0.7);
-}
+    ul.menu li:hover a {
+      color: #00c6ff;
+    }
 
-.menu-links li:hover::before {
-  width: 15px;
-}
-
-/* Texte */
-.menu-links li a {
-  color: #e0f2f1;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.25rem;
-  display: block;
-  position: relative;
-  z-index: 2;
-  user-select: none;
-}
-
-/* Animation vague du texte au hover */
-@keyframes wave {
-  0% { transform: translateX(0); }
-  50% { transform: translateX(5px); }
-  100% { transform: translateX(0); }
-}
-
-.menu-links li:hover a {
-  animation: wave 0.5s ease-in-out 2;
-}
-
-/* Responsive */
-@media (max-width: 480px) {
-  .menu-container {
-    padding: 30px 20px;
-  }
-  .menu-container h1 {
-    font-size: 2.5rem;
-  }
-  .menu-links li a {
-    font-size: 1.1rem;
-  }
-}
-
-
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      font-size: 0.9rem;
+      color: #777;
+      text-align: center;
+    }
   </style>
 </head>
+
 <body>
-  <div class="menu-container">
-   
-    <ul class="menu-links">
-      <li><a href="about.html">Who We Are</a></li>
-      <li><a href="team.html">Our Team</a></li>
-      <li><a href="events.html">Events</a></li>
-      <li><a href="gallery.html">Gallery</a></li>
+  <header>
+    <h1>Sharks TKD</h1>
+  </header>
+
+  <nav>
+    <ul class="menu">
+      <li><a href="about.html">Qui sommes-nous</a></li>
+      <li><a href="membres.html">Notre Équipe</a></li>
+      <li><a href="events.html">Nos Événements</a></li>
+      <li><a href="tkd.html">Notre Sport</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-  </div>
+  </nav>
+
+  <footer>
+    &copy; 2025 Sharks TKD Club. Tous droits réservés.
+  </footer>
 </body>
 </html>
+
+
+
